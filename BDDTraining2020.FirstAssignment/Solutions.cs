@@ -13,6 +13,7 @@ namespace BDDTraining2020.FirstAssignment
         /// This Methods works on checking year is Leap or not.
         /// </summary>
         /// <code>
+        /// Internally it works as
         /// if(year%400==0)
         /// return true;
         /// else if(year%4==0)
@@ -33,9 +34,7 @@ namespace BDDTraining2020.FirstAssignment
         }
 
 
-
-
-        // Question 2 :
+      
         /// <summary>
         /// This method used to reversing a string character wise.
         /// </summary>
@@ -44,6 +43,8 @@ namespace BDDTraining2020.FirstAssignment
         public static string ReverseStringByCharacter(string inputString)
         {
             int length = inputString.Length;
+            if (length <= 0)
+                return inputString;
             string outputString = "";
             while (length > 0)
             {
@@ -55,8 +56,6 @@ namespace BDDTraining2020.FirstAssignment
 
 
 
-
-        // Question 3 :
         /// <summary>
         /// Just to take an integer array as input and reverse the posion
         /// </summary>
@@ -112,15 +111,16 @@ namespace BDDTraining2020.FirstAssignment
 
 
         /// <summary>
-        /// Quation 5 :
+        /// Quation 5 : This method is working on string reverse per word.
         /// </summary>
         /// <param name="inputString"></param>
-        /// <returns></returns>
+        /// <returns>It retruns a new string which is in the reverse form</returns>
         public static string ReverseStringWordByWord(string inputString)
         {
             string outputString = "";// used as output string
             string tempString = ""; // Temporary string to fetch words from string
-
+            if (inputString.Length <= 0)
+                return inputString;
             int i = 0;
             int lastIndex = inputString.Length - 1;
 
@@ -129,7 +129,7 @@ namespace BDDTraining2020.FirstAssignment
                 tempString += inputString[i];
                 if (inputString[i] == ' ' || i == lastIndex)
                 {
-                    outputString += ReverseStringByCharacter(tempString) + inputString[i];
+                    outputString += ReverseStringByCharacter(tempString) + inputString[i]; // internally, it will reuse the method which reversing a string by character
                     tempString = "";
                 }
                 i++;
@@ -160,18 +160,40 @@ namespace BDDTraining2020.FirstAssignment
             else return false;
         }
 
+        /// <summary>
+        /// Get the number info, print number is armstrong or not?
+        /// </summary>
+        /// <param name="start"> Initial number </param>
+        /// <param name="end"></param>
+        public static void PrintArmstrongNumberWithinRange(int start, int end) {
+            bool flag;
+
+            if (start > end)
+            {
+                int temp = start;
+                start = end;
+                end = temp;
+            }
+
+            for( ; start<=end; start++)
+            {
+                flag=IsArmStrongNumber(start);
+                if (flag)
+                    Console.WriteLine($"{start} is Armstrong Number",start);
+            }
+         }
 
         /// <summary>
         /// Question 7 : Print Pattern.
         /// </summary>
-        /// <param name="rows"> Enter number of rows that you want toprint.</param>
+        /// <param name="rows"> Enter number of rows that you want to print.</param>
         public static void PrintPattern(int rows)
         {
             int outer, inner;
             int stars = 1;
             int spaces = rows - 1;
 
-            for (outer = 1; outer < rows * 2; outer++)
+            for (outer = 1; outer < rows * 2; outer++) // 
             {
                 for (inner = 1; inner <= spaces; inner++) // print single space frome 1 to space
                     Console.Write(" ");
@@ -181,7 +203,7 @@ namespace BDDTraining2020.FirstAssignment
 
                 if (outer < rows)
                 {
-                    spaces--;
+                    spaces--; //
                     stars++;
                 }
                 else
@@ -192,7 +214,5 @@ namespace BDDTraining2020.FirstAssignment
             }
 
         }
-
-
     }
 }

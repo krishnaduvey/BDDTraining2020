@@ -81,7 +81,6 @@ namespace Startup
             else
                 Environment.Exit(0);
         }
-
         public static bool DoYouWantToContinue()
         {
             try
@@ -89,23 +88,20 @@ namespace Startup
                 Console.WriteLine();
                 Console.WriteLine("Do you want to continue with this application :");
                 Console.WriteLine("Please input Y/N : Y to Continue and N to Exit");
-                Console.WriteLine();
+                //Console.WriteLine();
                 char input = Console.ReadKey().KeyChar;
                 var inputChar = Char.ToUpper(input);
                 if (inputChar == 'Y')
                     return true;
                 else if (inputChar == 'N')
-                    return false;
-                else
-                    DoYouWantToContinue();
-
+                    return false;        
             }
             catch (Exception ex)
             {
                 Console.WriteLine(errorMessage + "" + ex.Message);
             }
 
-            return false;
+            return DoYouWantToContinue();
         }
 
         public static void HelpForFirstAssignment()
@@ -125,7 +121,9 @@ namespace Startup
 
         }
 
-
+        /// <summary>
+        /// This method will execute all the programs in continuous way.
+        /// </summary>
         public static void ExecuteAll() {
             Console.WriteLine();
             QuestionOne();
@@ -221,11 +219,18 @@ namespace Startup
             {
                 Console.WriteLine("Please input a valid character here...");
                 char inputChar = Console.ReadKey().KeyChar;
-                Console.WriteLine();
-                if (!Solutions.IsVowel(inputChar))
-                    Console.WriteLine("Input Character is not a vowel");
-                else
-                    Console.WriteLine("Input Character is vowel");
+                bool flag = Char.IsLetter(inputChar);
+                if (!flag)
+                    Console.WriteLine("Please, Input a valid character");
+                else {
+
+                    Console.WriteLine();
+                    if (!Solutions.IsVowel(inputChar))
+                        Console.WriteLine("Input Character is not a vowel");
+                    else
+                        Console.WriteLine("Input Character is vowel");
+                }
+
             }
             catch (Exception ex)
             {
@@ -256,22 +261,19 @@ namespace Startup
             Console.WriteLine("Program 6: Write a Program to print Armstrong numbers between a given range");
             try
             {
-                Console.WriteLine("Please provide number of rows as input");
-                Console.WriteLine("Please input number and enter here....");
-                int inputNumber = Convert.ToInt32(Console.ReadLine());
-                Solutions.IsArmStrongNumber(inputNumber);
-
-                if (!Solutions.IsLeapYear(inputNumber))
-                    Console.WriteLine($"Number {inputNumber} is not a Armstrong Number", inputNumber);
-                else
-                    Console.WriteLine($"Number {inputNumber} is a Armstrong Number", inputNumber);
+                Console.WriteLine("Please input first number...");
+                int start= Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Please input second number...");
+                int end= Convert.ToInt32(Console.ReadLine());
+                if (start == 0 && end == 0)
+                    Console.WriteLine("Try again.. with valid inputs.");
+                else 
+                Solutions.PrintArmstrongNumberWithinRange(start, end);
             }
             catch (Exception ex)
             {
                 Console.WriteLine(errorMessage + "" + ex.Message);
             }
-
-
 
         }
 

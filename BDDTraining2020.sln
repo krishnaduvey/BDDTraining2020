@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDDTraining2020.Runner", "Startup\BDDTraining2020.Runner.csproj", "{6D10D3E3-0723-4815-8A1A-B057C080730B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDDTraining2020.FirstAssignment", "BDDTraining2020.FirstAssignment\BDDTraining2020.FirstAssignment.csproj", "{9B3BD3E9-A275-44F4-A83B-9448789A2913}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6D10D3E3-0723-4815-8A1A-B057C080730B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D10D3E3-0723-4815-8A1A-B057C080730B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D10D3E3-0723-4815-8A1A-B057C080730B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D10D3E3-0723-4815-8A1A-B057C080730B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B3BD3E9-A275-44F4-A83B-9448789A2913}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B3BD3E9-A275-44F4-A83B-9448789A2913}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B3BD3E9-A275-44F4-A83B-9448789A2913}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B3BD3E9-A275-44F4-A83B-9448789A2913}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {613C7229-39E6-4CA3-BD3C-1D5CF03BDCBF}
+	EndGlobalSection
+EndGlobal
